@@ -23,12 +23,12 @@ public class LoggingAspect {
         logger.info("After Aspect - Method is called - {}, Arguments passed - {}", joinPoint, joinPoint.getArgs());
     }
     */
-    @AfterReturning("execution(* com.in28minutes.learn_spring_aop.aopexample.*.*.*(..))")
+    @AfterReturning("com.in28minutes.learn_spring_aop.aopexample.aspects.CommonPointcutConfiguration.serviceBeanInterception()")
     public void logMethodCallAfterReturning(JoinPoint joinPoint){
         logger.info("AfterReturning Aspect - Method is called - {}, Arguments passed - {}", joinPoint, joinPoint.getArgs());
     }
 
-    @AfterThrowing(pointcut="execution(* com.in28minutes.learn_spring_aop.aopexample.*.*.*(..))", throwing="exception")
+    @AfterThrowing(pointcut="com.in28minutes.learn_spring_aop.aopexample.aspects.CommonPointcutConfiguration.serviceBeanInterception()", throwing="exception")
     public void logMethodCallAfterThrowing(JoinPoint joinPoint, Exception exception){
         logger.info("Aspect AfterThrowing - Method called {} - Exception " + exception, joinPoint);
     }
