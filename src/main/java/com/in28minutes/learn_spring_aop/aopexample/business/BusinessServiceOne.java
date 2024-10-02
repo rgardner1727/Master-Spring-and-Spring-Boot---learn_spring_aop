@@ -13,6 +13,7 @@ public class BusinessServiceOne {
     private DataServiceOne dataServiceOne;
 
     public int calculateMax(){
+        //throw new RuntimeException("An exception occurred.");
         return Arrays.stream(dataServiceOne.retrieveData()).max().orElse(-1);
     }
 }
